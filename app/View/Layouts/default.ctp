@@ -41,7 +41,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	<div id="container">
 		<div id="header">
 			<div class="border p-2 bg-dark col row m-0 text-light border border-dark">
-				<h5 class="col-7">SCF - Sistema controle financeiro</h5>
+				<h5 class="col-7">SCA - Sistema de controle de alunos</h5>
 					<div class="col-2">
 						<?= $this->Form->input("", array('placeholder' => 'Pesquisar...', 'class' => 'rounded', 'style' => 'width:180px')); ?>
 					</div>
@@ -55,7 +55,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 						</div>
 
 						<div>
-							<?= $this->Html->link("Ajuda", array(), array('class' => 'text-light text-decoration-none p-2')); ?>
+							<?= $this->Html->link("logout", array('controller' => 'users', 'action' => 'logout'), array('class' => 'text-light text-decoration-none p-2')); ?>
 						</div>
 
 					</div>

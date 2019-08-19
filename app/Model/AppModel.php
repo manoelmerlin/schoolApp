@@ -29,5 +29,8 @@ App::uses('Model', 'Model');
  *
  * @package       app.Model
  */
+
+App::uses('BlowfishPasswordHasher', 'Controller/Component/Auth');
+
 class AppModel extends Model {
 }

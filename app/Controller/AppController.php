@@ -29,9 +29,32 @@ App::uses('Controller', 'Controller');
  *
  * @package		app.Controller
  * @link		https://book.cakephp.org/2.0/en/controllers.html#the-app-controller
+ *
  */
+
 class AppController extends Controller {
 
 	public $helpers = array ('Form', 'Html');
+
+	public $components = array(
+		'Flash',
+		'Auth' => array(
+			'loginRedirect' => array(
+				'controller' => 'users',
+				'action' => 'index'
+			),
+			'logoutRedirect' => array(
+				'controller' => 'users',
+				'action' => 'login'
+			),
+			'authenticate' => array(
+				'Form' => array(
+					'passwordHasher' => 'Blowfish'
+				)
+			)
+		)
+	);
+
+
 
 }
