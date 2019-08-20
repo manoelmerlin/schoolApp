@@ -14,12 +14,14 @@
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
-$cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 ?>
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 	<?php echo $this->Html->charset(); ?>
 	<title>
 		<?php echo $this->fetch('title'); ?>
@@ -41,7 +43,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	<div id="container">
 		<div id="header">
 			<div class="border p-2 bg-dark col row m-0 text-light border border-dark">
-				<h5 class="col-7">SCA - Sistema de controle de alunos</h5>
+				<h5 class="col-7">SCE - Sistema controle escolar</h5>
 					<div class="col-2">
 						<?= $this->Form->input("", array('placeholder' => 'Pesquisar...', 'class' => 'rounded', 'style' => 'width:180px')); ?>
 					</div>
@@ -55,7 +57,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 						</div>
 
 						<div>
-							<?= $this->Html->link("logout", array('controller' => 'users', 'action' => 'logout'), array('class' => 'text-light text-decoration-none p-2')); ?>
+							<?= $this->Html->link("Ajuda", array(), array('class' => 'text-light text-decoration-none p-2')); ?>
 						</div>
 
 					</div>
@@ -64,24 +66,40 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
 			<!-- Menu lateral -->
 			<div class="row m-0">
-				<div class="p-0 col-3">
+				<div class="div-lateral p-0 col-2">
 					<div class="p-3">
 					</div>
 
-					<div class="div-menu p-2 col-11">
-						<?= $this->Html->link("Inicio", array(), array('class' => 'pl-3 text-decoration-none font-15 div-menu')); ?>
+					<div class="div-menu p-2 ">
+						<?= $this->Html->link("Inicio", array('controller' => 'users', 'action' => 'index'), array('class' => 'pl-3 text-decoration-none font-15 div-menu')); ?>
 					</div>
 
 					<div class="div-menu p-2">
-						<?= $this->Html->link("Formulário", array(), array('class' => 'pl-3 text-decoration-none font-15 div-menu')); ?>
+						<?= $this->Html->link("Alunos", array('controller' => 'users', 'action' => 'showmates'), array('class' => 'pl-3 text-decoration-none font-15 div-menu')); ?>
 					</div>
 
 					<div class="div-menu p-2">
-						<?= $this->Html->link("Contato", array(), array('class' => 'pl-3 text-decoration-none font-15 div-menu')); ?>
+						<?= $this->Html->link("Professores", array(), array('class' => 'pl-3 text-decoration-none font-15 div-menu')); ?>
 					</div>
+
+
+					<div class="div-menu p-2">
+					<?= $this->Html->link("Adicionar aluno", array('controller' => 'users', 'action' => 'addmate'), array('class' => 'pl-3 text-decoration-none font-15 div-menu')); ?>
+					</div>
+
+					<div class="div-menu p-2">
+						<?= $this->Html->link("Adicionar Curso", array('controller' => 'curses', 'action' => 'addcurse'), array('class' => 'pl-3 text-decoration-none font-15 div-menu')); ?>
+					</div>
+
+
+
+					<div class="div-menu p-2">
+						<?= $this->Html->link("Adicionar professor", array(), array('class' => 'pl-3 text-decoration-none font-15 div-menu')); ?>
+					</div>
+
 
 				</div>
-			<div id="content" class="col-4">
+			<div id="content" class="col">
 
 				<?php echo $this->Flash->render(); ?>
 

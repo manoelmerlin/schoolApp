@@ -7,11 +7,20 @@
 		}
 
 		public function index() {
-			pr(AuthComponent::user());
 
 		}
 
 		public function addMate() {
+			$this->loadModel("Student");
+
+			if ($this->request->is("post") || $this->request->is('put')) {
+				$this->Student->create();
+				if ($this->Student->save($this->request->data)) {
+					$this->Flash->success("Novo aluno cadastrado no sistema");
+				} else {
+					$this->Flash->error("Falha ao cadastrar novo aluno");
+				}
+			}
 
 		}
 
@@ -43,4 +52,10 @@
 			$this->redirect($this->Auth->logout());
 		}
 
+		public function showMates() {
+			$this->layout = "default";
+			$this->loadModel("Student");
+
+			$this->set("students", $this->Student->find("all"));
+		}
 	}
