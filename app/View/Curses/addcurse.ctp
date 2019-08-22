@@ -6,11 +6,11 @@
 	<div class="p-3 p-3">
 		<div class=" p-2">
 			<?= $this->Form->Create('Curse'); ?>
-			<?= $this->Form->input('curse_name', array("label" => "Nome do curso : ", 'class' => 'ml-1')); ?>
+			<?= $this->Form->input('name', array("label" => "Nome do curso : ", 'class' => 'ml-1')); ?>
 		</div>
 
 		<div class="p-2 pl-3">
-			<?= $this->Form->input("carga_horaria", array("label" => 'Carga horaria : ', 'class' => "ml-1")); ?>
+			<?= $this->Form->input("hours", array("label" => 'Carga horaria : ', 'class' => "ml-1")); ?>
 		</div>
 
 		<div class="p-2 pl-5">

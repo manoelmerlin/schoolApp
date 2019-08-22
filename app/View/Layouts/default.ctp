@@ -75,7 +75,7 @@
 					</div>
 
 					<div class="div-menu p-2">
-						<?= $this->Html->link("Alunos", array('controller' => 'users', 'action' => 'showmates'), array('class' => 'pl-3 text-decoration-none font-15 div-menu')); ?>
+						<?= $this->Html->link("Alunos", array('controller' => 'students', 'action' => 'showmates'), array('class' => 'pl-3 text-decoration-none font-15 div-menu')); ?>
 					</div>
 
 					<div class="div-menu p-2">

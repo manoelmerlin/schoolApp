@@ -52,10 +52,5 @@
 			$this->redirect($this->Auth->logout());
 		}
 
-		public function showMates() {
-			$this->layout = "default";
-			$this->loadModel("Student");
 
-			$this->set("students", $this->Student->find("all"));
-		}
 	}

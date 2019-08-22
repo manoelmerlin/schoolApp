@@ -33,4 +33,8 @@ App::uses('Model', 'Model');
 App::uses('BlowfishPasswordHasher', 'Controller/Component/Auth');
 
 class AppModel extends Model {
+
+	public $actsAs = array('Containable');
+
+
 }

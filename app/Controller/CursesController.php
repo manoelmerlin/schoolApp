@@ -13,25 +13,41 @@ class CursesController extends AppController {
 	}
 
 	public function matricularAluno($id) {
+		$this->loadModel('CursesStudent');
+		if ($this->request->is('post') || $this->request->is('put')) {
+
+			$this->loadModel('School');
+			$this->CursesStudent->create();
+			$this->request->data('CursesStudent.student_id', $id);
+
+			if ($this->CursesStudent->save($this->request->data)) {
+				$this->Flash->success('Sucesso');
+			} else {
+				$this->Flash->error("Falha");
+			}
+		}
+
 		$this->loadModel('Student');
 
 		$this->set('students', $this->Student->find('first', array(
 			'conditions' => array(
 				'Student.id' => $id
 			)
-			)));
+		)));
 
-		$check = $this->Curse->find('list', array(
+		$name = $this->Curse->find('list', array(
 			'conditions' => array(
-				'curse_name !=' => ''
+				'name !=' => ''
 			),
 			'fields' => array(
-				'curse_name'
+				'name'
 			)
 		));
 
+		$this->set('id', $id);
 
-		$this->set('check', $check);
+		$this->set('curse_id', $name);
+
 	}
 
 }
