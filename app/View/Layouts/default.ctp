@@ -79,7 +79,7 @@
 					</div>
 
 					<div class="div-menu p-2">
-						<?= $this->Html->link("Professores", array(), array('class' => 'pl-3 text-decoration-none font-15 div-menu')); ?>
+						<?= $this->Html->link("Professores", array('controller' => 'teachers', 'action' => 'view'), array('class' => 'pl-3 text-decoration-none font-15 div-menu')); ?>
 					</div>
 
 
@@ -94,7 +94,7 @@
 
 
 					<div class="div-menu p-2">
-						<?= $this->Html->link("Adicionar professor", array(), array('class' => 'pl-3 text-decoration-none font-15 div-menu')); ?>
+						<?= $this->Html->link("Adicionar professor", array('controller' => 'teachers', 'action' => 'add'), array('class' => 'pl-3 text-decoration-none font-15 div-menu')); ?>
 					</div>
 
 

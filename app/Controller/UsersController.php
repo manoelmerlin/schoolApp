@@ -12,7 +12,7 @@
 
 		public function addMate() {
 			$this->loadModel("Student");
-
+			//201901234510
 			if ($this->request->is("post") || $this->request->is('put')) {
 				$this->Student->create();
 				if ($this->Student->save($this->request->data)) {

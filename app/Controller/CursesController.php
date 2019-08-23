@@ -16,7 +16,6 @@ class CursesController extends AppController {
 		$this->loadModel('CursesStudent');
 		if ($this->request->is('post') || $this->request->is('put')) {
 
-			$this->loadModel('School');
 			$this->CursesStudent->create();
 			$this->request->data('CursesStudent.student_id', $id);
 
@@ -29,11 +28,13 @@ class CursesController extends AppController {
 
 		$this->loadModel('Student');
 
-		$this->set('students', $this->Student->find('first', array(
+		$shearch = $this->Student->find('first', array(
 			'conditions' => array(
 				'Student.id' => $id
 			)
-		)));
+		));
+
+		$this->set('students', $shearch);
 
 		$name = $this->Curse->find('list', array(
 			'conditions' => array(
