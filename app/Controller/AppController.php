@@ -38,9 +38,14 @@ class AppController extends Controller {
 
 	public $components = array(
 		'Flash',
+		'RequestHandler' => array(
+			'viewClassMap' => array(
+				'pdf' => 'CakeTCPDF.Pdf'
+			)
+		),
 		'Auth' => array(
 			'loginRedirect' => array(
-				'controller' => 'users',
+				'controller' => 'curses',
 				'action' => 'index'
 			),
 			'logoutRedirect' => array(

@@ -61,6 +61,7 @@
 					'id' => $id,
 					'status' => 1
 				);
+
 				$this->Student->save($save);
 				$this->redirect(array('controller' => 'students', 'action' => 'showmates'));
 			}

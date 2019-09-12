@@ -26,6 +26,7 @@
 		echo $this->Html->meta('icon');
 		echo $this->fetch('meta');
 		echo $this->Html->css(array(
+			'estilo',
 			'bootstrap'
 		));
 		echo $this->fetch('script');
@@ -34,8 +35,26 @@
 <body>
 	<div id="container">
 		<div id="header">
+
+			<div class="border p-4 row m-0">
+
+				<div>
+					<?= $this->Html->link('Index', array('controller' => 'users', 'action' => 'index')); ?>
+				</div>
+
+				<!-- Botão de cursos -->
+				<div class='pl-1'>
+					<?= $this->html->link('Cursos', array('controller' => 'curses', 'action' => 'index')); ?>
+				</div>
+
+				<div class="ml-5">
+					<?= $this->html->link('Quero me tornar professor', array('controller' => 'teachers', 'action' => 'ask', AuthComponent::user('id'))); ?>
+				</div>
+
+			</div>
+
 		</div>
-		<div id="content">
+		<div id="content" class=>
 
 			<?php echo $this->Flash->render(); ?>
 

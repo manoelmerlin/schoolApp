@@ -10,7 +10,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<?php foreach($check as $c): ?>
+		<?php foreach($teacher as $c): ?>
 			<td>
 				<?= $c['Teacher']['id']; ?>
 			</td>

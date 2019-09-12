@@ -2,15 +2,14 @@
 	<table class="table table-dark my-5">
 	<thead>
 		<tr>
-		<th scope="col">RA</th>
-		<th scope="col">Nome</th>
-		<th scope="col">Email</th>
-		<th scope="col">Telefone</th>
-		<th scope="col">Cursos</th>
-		<th scope="col">Status</th>
-		<th scope="col">Cadastro</th>
-		<th scope="col">Açoes</th>
-
+			<th scope="col">RA</th>
+			<th scope="col">Nome</th>
+			<th scope="col">Email</th>
+			<th scope="col">Telefone</th>
+			<th scope="col">Cursos</th>
+			<th scope="col">Status</th>
+			<th scope="col">Cadastro</th>
+			<th scope="col">Açoes</th>
 		</tr>
 	</thead>
 

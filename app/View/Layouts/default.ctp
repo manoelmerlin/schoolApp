@@ -18,10 +18,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+	<script type="text/javascript" src="/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+	<link rel="stylesheet" href="/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
 	<?php echo $this->Html->charset(); ?>
 	<title>
 		<?php echo $this->fetch('title'); ?>
@@ -57,7 +59,7 @@
 						</div>
 
 						<div>
-							<?= $this->Html->link("Ajuda", array(), array('class' => 'text-light text-decoration-none p-2')); ?>
+							<?= $this->Html->link("Logout", array('controller' => 'users', 'action' => 'logout'), array('class' => 'text-danger text-decoration-none p-2')); ?>
 						</div>
 
 					</div>
@@ -71,7 +73,7 @@
 					</div>
 
 					<div class="div-menu p-2 ">
-						<?= $this->Html->link("Inicio", array('controller' => 'users', 'action' => 'index'), array('class' => 'pl-3 text-decoration-none font-15 div-menu')); ?>
+						<?= $this->Html->link("Inicio", array('controller' => 'curses', 'action' => 'index'), array('class' => 'pl-3 text-decoration-none font-15 div-menu')); ?>
 					</div>
 
 					<div class="div-menu p-2">
@@ -91,10 +93,12 @@
 						<?= $this->Html->link("Adicionar Curso", array('controller' => 'curses', 'action' => 'addcurse'), array('class' => 'pl-3 text-decoration-none font-15 div-menu')); ?>
 					</div>
 
-
-
 					<div class="div-menu p-2">
 						<?= $this->Html->link("Adicionar professor", array('controller' => 'teachers', 'action' => 'add'), array('class' => 'pl-3 text-decoration-none font-15 div-menu')); ?>
+					</div>
+
+					<div class="div-menu p-2">
+						<?= $this->Html->link("Pendentes", array('controller' => 'teachers', 'action' => 'pendingTeacherCase'), array('class' => 'pl-3 text-decoration-none font-15 div-menu')); ?>
 					</div>
 
 
@@ -114,3 +118,4 @@
 	<?php //echo $this->element('sql_dump'); ?>
 </body>
 </html>
+

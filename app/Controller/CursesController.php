@@ -1,6 +1,23 @@
 <?php
 class CursesController extends AppController {
 
+	public function index() {
+		$this->layout = 'formlayout';
+
+		$allCurses = $this->Curse->find('all', array(
+			'limit' => 4
+		));
+		$this->set('allCurses', $allCurses);
+	}
+
+	public function view($id) {
+		$this->layout = 'formlayout';
+
+		$findCurses = $this->Curse->findById($id);
+
+		$this->set('findCurses', $findCurses);
+	}
+
 	public function addCurse() {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			$this->Curse->create();

@@ -1,6 +1,8 @@
 <?php
 	class User extends AppModel {
 
+		public $actAs = array('Containable');
+
 		public $validate = array(
 			'username' => array(
 				'required' => array(
@@ -12,8 +14,17 @@
 				'required' => array(
 					'rule' => 'notBlank',
 					'message' => 'A password is required'
+				),
+			),
+
+			'confPassword' => array(
+				'compare' => array(
+					'rule' => 'comparePassword',
+					'message' => 'Senhas não conincidem'
+
 				)
 			),
+
 			'role' => array(
 				'valid' => array(
 					'rule' => array('inList', array('admin', 'author')),
@@ -33,4 +44,17 @@
 			return true;
 		}
 
+		public function comparePassword($comparePass = null) {
+			$data = $this->data[$this->alias];
+
+			if ($comparePass['confPassword'] == $data['password']) {
+				return true;
+			}
+
+			return false;
+		}
+
 	}
+
+
+

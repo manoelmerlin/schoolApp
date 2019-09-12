@@ -21,8 +21,15 @@
 						<?= $this->Form->submit('Entrar', array('class' => 'mx-auto col-5 p-1 bg-primary text-light border border-primary border-solid')); ?>
                     </div>
 
+					<div class="row col-9 m-0">
+					   <?php echo $this->Html->link('ㅤㅤEsqueceu a senha? ', array('controller' => 'Users', 'action' => 'forgot')); ?>
+					   <p class=''> <?= "ㅤ|ㅤ" ?></p>
+					   <?php echo $this->Html->link(' Cadastre-se aqui ! ', array('controller' => 'users', 'action' => 'register')); ?>
+					</div>
+
 					<div>
-				       <?php echo $this->Html->link('Esqueceu a senha?', array('controller' => 'Users', 'action' => 'forgot')); ?>
+
+
 					</div>
 
 					<div>
