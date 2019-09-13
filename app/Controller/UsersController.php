@@ -52,5 +52,9 @@
 			$this->redirect($this->Auth->logout());
 		}
 
+		public function showdbola() {
+
+
+		}
 
 	}

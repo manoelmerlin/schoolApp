@@ -41,9 +41,5 @@
 	<h3 class='my-3'>Cursos em destaque</h6>
 </div>
 
-<div class='col-12 mt-4'>
 
 
-
-
-<div class='col-12 mt-4'>

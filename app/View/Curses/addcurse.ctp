@@ -13,9 +13,8 @@
 			<?= $this->Form->input("hours", array("label" => 'Carga horaria : ', 'class' => "ml-1")); ?>
 		</div>
 
-		<div class="p-2 pl-5">
-			<?= $this->Form->input("teacher", array("label" => 'Professor : ', 'class' => "")); ?>
-		</div>
+
+			<?php echo $this->Form->input('teacher_id', array('type' => 'hidden', 'value' => AuthComponent::user('id'))); ?>
 
 		<div class="p-3 pl-5">
 			<?= $this->Form->submit("Cadastrar novo curso", array('controller' => 'curses', 'action' => 'addcurse', "label" => 'Professor : ', 'class' => "bg-success col-3  border border-success text-light form-control pl-3")); ?>

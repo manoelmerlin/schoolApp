@@ -1,7 +1,6 @@
 <?php
 	class Curse extends AppModel {
 
-		public $hasAndBelongsToMany = array('Student');
-
+		public $belongsTo = array('User');
 
 	}

@@ -18,10 +18,13 @@
 		}
 
 		public function view() {
-			$teacher = $this->Teacher->find('all');
+			$teacher = $this->Teacher->find('all', array(
+				'conditions' => array(
+					'Teacher.status' => 2
+				)
+			));
 
 			$this->set('teacher', $teacher);
-
 		}
 
 		public function view_pdf($id = null) {
@@ -150,7 +153,10 @@
 			$checkStatusTeacher = $this->Teacher->find('first', array(
 				'conditions' => array(
 					'Teacher.id' => $id,
-					'Teacher.status' => 0
+					'OR' => array(
+						array('Teacher.status' => 0),
+						array('Teacher.status' => 2)
+					)
 				)
 			));
 

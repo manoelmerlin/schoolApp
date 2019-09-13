@@ -4,6 +4,7 @@
 		public $belongsTo = array('User');
 
 
+
 		public function getExportConfig() {
 			$header = [__('Field label 1'), __('Field label 2'), __('Field label 3'), __('Field label 4')];
 			$width = [35, 20, 10, 15];

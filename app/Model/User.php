@@ -1,6 +1,8 @@
 <?php
 	class User extends AppModel {
 
+		public $hasMany = array('Curse');
+
 		public $actAs = array('Containable');
 
 		public $validate = array(

@@ -70,11 +70,11 @@
 						<?= $this->Html->link("Matricular", array('controller' => 'curses', 'action' => 'matricularaluno', $s['Student']['id'])); ?>
 					</div>
 						<?php if($s['Student']['status'] == 1): ?>
-							<?= $this->Html->link('Desativar cadastro', array('controller' => 'students', 'action' => 'delete', $s['Student']['id']), array('confirm' => 'Você tem certeza que deseja ativar a matricula desmatricular esse aluno?')); ?> <br>
+							<?= $this->Html->link('Desativar cadastro', array('controller' => 'students', 'action' => 'delete', $s['Student']['id']), array('alert' => 'Matriculadesativada com sucesso', 'confirm' => $s['Student']['id'] . 'Você tem certeza que deseja ativar a matricula desmatricular esse aluno?')); ?> <br>
 						<?php endif; ?>
 
 						<?php if($s['Student']['status'] == 0): ?>
-							<?= $this->Html->link('Ativar matricula', array('controller' => 'students', 'action' => 'enablestudent', $s['Student']['id']), array('confirm' => 'Você tem certeza que deseja reativar está matricula?')); ?>
+							<?= $this->Html->link('Ativar matricula', array('controller' => 'students', 'action' => 'enablestudent', $s['Student']['id']), array('confirm' => $s['Student']['id'] . 'Você tem certeza que deseja reativar está matricula?')); ?>
 						<?php endif; ?>
 
 					</div>
@@ -87,4 +87,5 @@
 	<?php endforeach; ?>
 	</table>
 </div>
+
 
